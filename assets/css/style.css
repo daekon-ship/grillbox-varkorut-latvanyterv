@@ -745,7 +745,7 @@ section[id],main[id]{scroll-margin-top:88px}
   .burger-btn{display:inline-flex}
   .hide-mobile{display:none}
   .showcase__in,.lepeny__in,.contact__in{grid-template-columns:1fr}
-  .showcase__fig{order:-1;width:min(100%,520px)}
+  .showcase__fig{order:-1;width:min(76%,420px)}
   .rate__in{grid-template-columns:1fr}
   .ways{grid-template-columns:1fr}
   .way p{min-height:0}
@@ -782,6 +782,8 @@ section[id],main[id]{scroll-margin-top:88px}
   .hero__copy{order:4;max-width:none;margin-top:clamp(14px,2.4vw,24px)}
   .hero__cta{position:relative;z-index:5}
   .hero__cta .btn{flex:1 1 100%;padding:18px 20px;font-size:16px}
+  .showcase__fig{width:min(72vw,330px)}
+  .showcase__fig figcaption{font-size:9.5px;letter-spacing:.28em;margin-top:12px}
   .hero__tag--1{top:6%;left:0}
   .hero__tag--2{bottom:8%;right:0}
   .hero__scroll{display:none}
@@ -832,7 +834,10 @@ section[id],main[id]{scroll-margin-top:88px}
   .prod__name{font-size:18px}
   .sechead__title{font-size:clamp(26px,8vw,38px)}
   .showcase__title{font-size:clamp(26px,8.5vw,40px)}
-  .spec li{min-width:0;flex:1 1 100px;padding:10px 14px}
+  .spec{gap:8px}
+  .spec li{min-width:0;flex:1 1 0;padding:10px 6px;text-align:center}
+  .spec strong{font-size:19px}
+  .spec span{font-size:9px;letter-spacing:.06em}
   .hero__tag{padding:8px 11px}
   .hero__tag strong{font-size:18px}
 }
