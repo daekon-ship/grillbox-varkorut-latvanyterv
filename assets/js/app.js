@@ -4,8 +4,16 @@
 (function () {
   'use strict';
 
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reduceMQ = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var reduce = reduceMQ.matches;
   var fine = window.matchMedia('(pointer: fine)').matches;
+  if (reduceMQ.addEventListener) {
+    reduceMQ.addEventListener('change', function (e) {
+      reduce = e.matches;
+      document.documentElement.classList.toggle('reduce-motion', reduce);
+    });
+  }
+  document.documentElement.classList.toggle('reduce-motion', reduce);
   var $ = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
   var fmt = function (n) { return new Intl.NumberFormat('hu-HU').format(n) + ' Ft'; };
@@ -22,10 +30,9 @@
   var mmenu = $('#mmenu');
   var openMenu = function () {
     mmenu.hidden = false;
-    requestAnimationFrame(function () {
-      mmenu.classList.add('is-open');
-      $$('.mmenu__nav a', mmenu).forEach(function (a, i) { a.style.transitionDelay = (0.06 + i * 0.05) + 's'; });
-    });
+    void mmenu.offsetWidth;
+    mmenu.classList.add('is-open');
+    $$('.mmenu__nav a', mmenu).forEach(function (a, i) { a.style.transitionDelay = (0.06 + i * 0.05) + 's'; });
     document.body.style.overflow = 'hidden';
   };
   var closeMenu = function () {
@@ -154,9 +161,10 @@
       };
     };
     var count = 0;
+    var running = false, heroVisible = true;
     var init = function () {
       resize();
-      count = W < 760 ? 26 : 54;
+      count = W < 760 ? 12 : (W < 1200 ? 26 : 40);
       parts = [];
       for (var i = 0; i < count; i++) parts.push(make(true));
     };
@@ -172,25 +180,31 @@
         var alpha = p.a * Math.min(1, p.life / 40) * (p.y / H > 0.85 ? (H - p.y) / (H * 0.15) : 1);
         ctx.beginPath();
         ctx.fillStyle = 'hsla(' + p.hue + ',100%,58%,' + alpha.toFixed(3) + ')';
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = 'hsla(' + p.hue + ',100%,55%,.65)';
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fill();
       }
-      ctx.shadowBlur = 0;
       raf = requestAnimationFrame(loop);
     };
+    var start = function () { if (!running) { running = true; raf = requestAnimationFrame(loop); } };
+    var stop = function () { running = false; cancelAnimationFrame(raf); };
     init();
-    loop();
+    start();
     window.addEventListener('resize', function () {
-      cancelAnimationFrame(raf);
+      stop();
       init();
-      loop();
+      start();
     });
     document.addEventListener('visibilitychange', function () {
-      if (document.hidden) { cancelAnimationFrame(raf); }
-      else { raf = requestAnimationFrame(loop); }
+      if (document.hidden) stop();
+      else if (heroVisible) start();
     });
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        heroVisible = entries[0].isIntersecting;
+        if (heroVisible && !document.hidden) start(); else stop();
+      }, { threshold: 0 }).observe($('#hero'));
+    }
+  } else if (canvas) {
+    canvas.style.display = 'none';
   }
 
   /* ---------------- hero mouse depth ---------------- */
@@ -299,7 +313,8 @@
     updateTotal();
     lastFocus = document.activeElement;
     modal.hidden = false;
-    requestAnimationFrame(function () { modal.classList.add('is-open'); });
+    void modal.offsetWidth;
+    modal.classList.add('is-open');
     document.body.style.overflow = 'hidden';
     setTimeout(function () { $('.modal__close', modal).focus(); }, 60);
   }
@@ -437,7 +452,8 @@
 
   function openCart() {
     cart.hidden = false;
-    requestAnimationFrame(function () { cart.classList.add('is-open'); });
+    void cart.offsetWidth;
+    cart.classList.add('is-open');
     document.body.style.overflow = 'hidden';
   }
   function closeCart() {
@@ -447,12 +463,52 @@
   }
   $$('[data-cart-open]').forEach(function (b) { b.addEventListener('click', openCart); });
   $$('[data-cart-close]').forEach(function (b) { b.addEventListener('click', closeCart); });
+
+  /* ---------------- order picker (RENDELEK CTA) ---------------- */
+  var opick = $('#opick');
+  var opickLastFocus = null;
+  function openPicker() {
+    opickLastFocus = document.activeElement;
+    opick.hidden = false;
+    void opick.offsetWidth;
+    opick.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    setTimeout(function () { var f = $('.opick__opt', opick); if (f) f.focus(); }, 60);
+  }
+  function closePicker() {
+    opick.classList.remove('is-open');
+    document.body.style.overflow = '';
+    setTimeout(function () { opick.hidden = true; if (opickLastFocus) opickLastFocus.focus(); }, 380);
+  }
+  $$('[data-orderpick]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      openPicker();
+    });
+  });
+  $$('[data-opick-close]', opick).forEach(function (b) { b.addEventListener('click', closePicker); });
+  if (opick) {
+    opick.addEventListener('keydown', function (e) {
+      if (e.key !== 'Tab') return;
+      var f = $$('.opick__opt, .modal__close', opick).filter(function (el) { return el.offsetParent !== null; });
+      if (!f.length) return;
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
+  }
+
   var toOrder = $('#toOrder');
-  if (toOrder) toOrder.addEventListener('click', function () { closeCart(); });
+  if (toOrder) toOrder.addEventListener('click', function (e) {
+    e.preventDefault();
+    closeCart();
+    setTimeout(openPicker, 300);
+  });
 
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
-      if (!modal.hidden) closeModal();
+      if (opick && !opick.hidden) closePicker();
+      else if (!modal.hidden) closeModal();
       else if (!cart.hidden) closeCart();
       else if (mmenu.classList.contains('is-open')) closeMenu();
     }
