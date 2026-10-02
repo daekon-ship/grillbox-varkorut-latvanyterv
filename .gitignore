@@ -1,0 +1,11 @@
+# Research / working files (not part of the deliverable)
+_research/
+
+# Freebuff
+.freebuff/
+
+# OS / editor junk
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.log

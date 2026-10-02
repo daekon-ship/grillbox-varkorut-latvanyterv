@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GrillBox Várkörút — Street food Székesfehérvár</title>
+<meta name="description" content="GrillBox Várkörút, Székesfehérvár: kézműves hamburgerek, saját recept alapján készült lepények, grilltálak, doggyk és palacsinták. Helyben, elvitelre, Wolt és foodora.">
+<meta name="theme-color" content="#0B0B0B">
+<meta property="og:title" content="GrillBox Várkörút — Street food Székesfehérvár">
+<meta property="og:description" content="Kézműves hamburgerek, lepények, grilltálak a Várkörúton.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/p-fullextra.webp">
+<link rel="preload" href="assets/fonts/anton-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='11' fill='%230B0B0B'/%3E%3Cpath d='M20 9.5c3.6 3.4 5.4 6.2 5.4 8.6a5.4 5.4 0 1 1-10.8 0c0-1.9.8-3.7 2.4-5.5.4 1.5 1 2.4 1.9 2.9-.4-2.3 0-4.3 1.1-6z' fill='%23FF6B1A'/%3E%3Cpath d='M12.5 30.5h15' stroke='%23FF6B1A' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preload" href="assets/img/hero-burger.webp" as="image" fetchpriority="high">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Ugrás a tartalomra</a>
+
+<!-- ===== icon sprite ===== -->
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-logo" viewBox="0 0 40 40">
+    <rect x="2.5" y="2.5" width="35" height="35" rx="11" fill="none" stroke="currentColor" stroke-width="3"/>
+    <path d="M20 9.5c3.6 3.4 5.4 6.2 5.4 8.6a5.4 5.4 0 1 1-10.8 0c0-1.9.8-3.7 2.4-5.5.4 1.5 1 2.4 1.9 2.9-.4-2.3 0-4.3 1.1-6z" fill="currentColor"/>
+    <path d="M12.5 30.5h15" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2.2l1.9 10.4a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.6L20 7H6.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9.5" cy="19.5" r="1.6" fill="currentColor"/><circle cx="17" cy="19.5" r="1.6" fill="currentColor"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.5 3.5h3l1.6 4-2 1.4a12 12 0 0 0 6 6l1.4-2 4 1.6v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M12.5 5.5 19 12l-6.5 6.5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3.6 2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L12 17l-5.3 2.8 1.1-5.9L3.5 9.8l5.9-.8Z" fill="currentColor"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5.5v13M5.5 12h13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5.5 12h13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11Z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="10" r="2.6" fill="currentColor"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 9V7a3 3 0 0 1 6 0v2" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13.5 2.5 5 13.5h5.5L9.5 21.5 19 10.5h-6z" fill="currentColor"/></symbol>
+</svg>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor-glow" aria-hidden="true"></div>
+
+<!-- ===== HEADER ===== -->
+<header class="header" id="header">
+  <div class="header__in">
+    <a class="brand" href="#hero" aria-label="GrillBox Várkörút — főoldal">
+      <svg class="brand__mark" aria-hidden="true"><use href="#i-logo"></use></svg>
+      <span class="brand__text">
+        <strong>GRILLBOX</strong>
+        <small>VÁRKÖRÚT · SZÉKESFEHÉRVÁR</small>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Fő navigáció">
+      <a href="#kinalat">Kínálat</a>
+      <a href="#etlap">Étlap</a>
+      <a href="#rendeles">Rendelés</a>
+      <a href="#kapcsolat">Kapcsolat</a>
+    </nav>
+
+    <div class="header__act">
+      <a class="iconbtn only-mobile" href="tel:+36204284164" aria-label="Hívás"><svg><use href="#i-phone"></use></svg></a>
+      <button class="iconbtn cart-btn" data-cart-open aria-label="Kosár megnyitása">
+        <svg><use href="#i-cart"></use></svg>
+        <span class="cart-badge" data-cart-count hidden>0</span>
+      </button>
+      <a class="btn btn--primary btn--sm magnet hide-mobile" href="#etlap">RENDELEK</a>
+      <button class="iconbtn burger-btn" data-menu-open aria-label="Menü megnyitása"><svg><use href="#i-menu"></use></svg></button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MOBILE MENU ===== -->
+<div class="mmenu" id="mmenu" hidden>
+  <div class="mmenu__head">
+    <span class="mmenu__label">MENÜ</span>
+    <button class="iconbtn" data-menu-close aria-label="Menü bezárása"><svg><use href="#i-close"></use></svg></button>
+  </div>
+  <nav class="mmenu__nav">
+    <a href="#kinalat">Kínálat</a>
+    <a href="#etlap">Étlap</a>
+    <a href="#rendeles">Rendelés</a>
+    <a href="#ertekeles">Értékelések</a>
+    <a href="#kapcsolat">Kapcsolat</a>
+  </nav>
+  <div class="mmenu__foot">
+    <a class="btn btn--primary btn--block" href="#etlap">ÉTLAP MEGNÉZÉSE</a>
+    <a class="btn btn--ghost btn--block" href="tel:+36204284164">+36 20 428 4164</a>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+  <div class="hero__bg" aria-hidden="true">
+    <div class="hero__glow"></div>
+    <div class="hero__grate"></div>
+    <canvas id="embers"></canvas>
+  </div>
+
+  <div class="hero__in">
+    <p class="hero__kicker"><span class="tick"></span>VÁRKÖRÚT · SZÉKESFEHÉRVÁR · STREET FOOD</p>
+
+    <h1 class="hero__title">
+      <span class="line"><span>GRILL</span></span><span class="line"><span>BOX</span></span>
+    </h1>
+
+    <div class="hero__copy">
+      <p class="hero__sub">Street food. Ahogy szeretjük.</p>
+      <div class="hero__cta">
+        <a class="btn btn--primary magnet" href="#etlap">ÉTLAP MEGNÉZÉSE</a>
+        <a class="btn btn--ghost magnet" href="#rendeles">RENDELEK</a>
+      </div>
+      <div class="hero__proof">
+        <span class="rate"><svg class="ico-star"><use href="#i-star"></use></svg> 4,6</span>
+        <span class="dot"></span>
+        <span>380+ Google értékelés</span>
+        <span class="dot"></span>
+        <span class="open-now" data-open-now>—</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__food" data-parallax="0.12">
+    <div class="hero__halo" aria-hidden="true"></div>
+    <img src="assets/img/hero-burger.webp" width="939" height="844" fetchpriority="high"
+         alt="GrillBox Full extra burger marhahússal, baconnel és cheddarral" class="hero__img" id="heroImg">
+    <div class="hero__tag hero__tag--1"><strong>100%</strong><span>marha</span></div>
+    <div class="hero__tag hero__tag--2"><strong>15 dkg</strong><span>húspogácsa</span></div>
+  </div>
+
+  <a class="hero__scroll" href="#kinalat" aria-label="Görgetés a kínálathoz">
+    <span>SCROLL</span><i></i>
+  </a>
+</section>
+
+<!-- ===== MARQUEE ===== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>KÉZMŰVES HAMBURGEREK</span><b>✦</b><span>LEPÉNYEK</span><b>✦</b><span>GRILLTÁLAK</span><b>✦</b>
+    <span>DOGGYK</span><b>✦</b><span>PALACSCINTÁK</span><b>✦</b><span>MINIFÁNKOK</span><b>✦</b>
+    <span>KÉZMŰVES HAMBURGEREK</span><b>✦</b><span>LEPÉNYEK</span><b>✦</b><span>GRILLTÁLAK</span><b>✦</b>
+    <span>DOGGYK</span><b>✦</b><span>PALACSCINTÁK</span><b>✦</b><span>MINIFÁNKOK</span><b>✦</b>
+  </div>
+</div>
+
+<!-- ===== KATEGÓRIÁK ===== -->
+<section class="sec sec--cats" id="kinalat">
+  <div class="wrap">
+    <header class="sechead">
+      <p class="sechead__label"><span class="num">01</span> VÁLASSZ</p>
+      <h2 class="sechead__title r-clip"><span>MIT KÉRSZ MA?</span></h2>
+      <p class="sechead__sub r-up">Öt irány, egy grillsütő. Kattints a kategóriára és ugorj egyenesen a térképes étlaphoz.</p>
+    </header>
+
+    <div class="cats" role="list">
+      <a class="cat cat--lg r-up" role="listitem" href="#etlap" data-jump="burgerek">
+        <img src="assets/img/cat-burger.webp" width="939" height="844" loading="lazy" alt="GrillBox sajtkirály burger">
+        <span class="cat__grad"></span>
+        <span class="cat__meta"><span class="cat__idx">01</span><h3>BURGEREK</h3><em>100% marha, vajas buci</em></span>
+        <span class="cat__go"><svg><use href="#i-arrow"></use></svg></span>
+      </a>
+
+      <a class="cat r-up" role="listitem" href="#etlap" data-jump="lepenyek">
+        <img src="assets/img/cat-lepeny.webp" width="984" height="577" loading="lazy" alt="GrillBox texas extra lepény">
+        <span class="cat__grad"></span>
+        <span class="cat__meta"><span class="cat__idx">02</span><h3>LEPÉNYEK</h3><em>saját recept, házi szósz</em></span>
+        <span class="cat__go"><svg><use href="#i-arrow"></use></svg></span>
+      </a>
+
+      <a class="cat r-up" role="listitem" href="#etlap" data-jump="grilltalek">
+        <img src="assets/img/p-talcsirkes.webp" width="760" height="630" loading="lazy" alt="GrillBox csirkés grilltál">
+        <span class="cat__grad"></span>
+        <span class="cat__meta"><span class="cat__idx">03</span><h3>GRILLTÁLAK</h3><em>hasábbal, cheddarral</em></span>
+        <span class="cat__go"><svg><use href="#i-arrow"></use></svg></span>
+      </a>
+
+      <a class="cat r-up" role="listitem" href="#etlap" data-jump="doggyk">
+        <img src="assets/img/cat-doggy.webp" width="991" height="686" loading="lazy" alt="GrillBox dogger bagettben">
+        <span class="cat__grad"></span>
+        <span class="cat__meta"><span class="cat__idx">04</span><h3>DOGGYK</h3><em>házi fűszerezésű kolbász</em></span>
+        <span class="cat__go"><svg><use href="#i-arrow"></use></svg></span>
+      </a>
+
+      <a class="cat cat--wide r-up" role="listitem" href="#etlap" data-jump="desszertek">
+        <img src="assets/img/cat-desszert.webp" width="1000" height="562" loading="lazy" alt="GrillBox házi palacsinta Nutellával">
+        <span class="cat__grad"></span>
+        <span class="cat__meta"><span class="cat__idx">05</span><h3>DESSZERTEK</h3><em>palacsinták, minifánkok</em></span>
+        <span class="cat__go"><svg><use href="#i-arrow"></use></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BURGER SHOWCASE ===== -->
+<section class="showcase" id="showcase">
+  <div class="showcase__bg" aria-hidden="true"></div>
+  <div class="wrap showcase__in">
+    <div class="showcase__text">
+      <p class="sechead__label"><span class="num">02</span> A GRILLBŐL</p>
+      <h2 class="showcase__title">
+        <span class="r-clip"><span>100% MARHA.</span></span>
+        <span class="r-clip d1"><span class="accent">100% GRILLBOX.</span></span>
+      </h2>
+      <p class="showcase__sub r-up">Kézműves hamburgerek, frissen készítve — 15 dkg-os marhahús, 12 dkg-os vajas buci, házi szószokkal.</p>
+      <ul class="spec r-up">
+        <li><strong>15 dkg</strong><span>marha húspogácsa</span></li>
+        <li><strong>12 dkg</strong><span>vajas buci</span></li>
+        <li><strong>Házi</strong><span>hamburgerszósz</span></li>
+      </ul>
+      <a class="btn btn--primary magnet r-up" href="#etlap" data-jump="burgerek">BURGEREK MEGNÉZÉSE</a>
+    </div>
+
+    <figure class="showcase__fig" data-parallax="0.08">
+      <img src="assets/img/showcase-burger.webp" width="897" height="844" loading="lazy"
+           alt="GrillBox sajtkirály burger cheddarral és friss salátával">
+      <figcaption>FULL EXTRA · SAJT KIRÁLY · TEXAS</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ===== LEPÉNY ===== -->
+<section class="sec sec--lepeny" id="lepeny">
+  <div class="wrap lepeny__in">
+    <figure class="lepeny__fig r-mask" data-parallax="0.1">
+      <img src="assets/img/lepeny-feature.webp" width="957" height="589" loading="lazy"
+           alt="GrillBox görög extra lepény fa deszkán">
+      <span class="lepeny__stamp">SAJÁT RECEPT</span>
+    </figure>
+
+    <div class="lepeny__text">
+      <p class="sechead__label"><span class="num">03</span> A MIEINK</p>
+      <h2 class="showcase__title">
+        <span class="r-clip"><span>NEM CSAK</span></span>
+        <span class="r-clip d1"><span class="accent">BURGER.</span></span>
+      </h2>
+      <p class="showcase__sub r-up">Házi, egyedi recept alapján készült lepények különböző feltétekkel — házi fűszerezésű tejfölös szósszal, ahogy a GrillBoxban készül.</p>
+      <div class="chips r-up">
+        <span class="chip">Sajtos-Csirkés 2 990 Ft</span>
+        <span class="chip">Székely Extra 3 490 Ft</span>
+        <span class="chip">Texas Extra 3 890 Ft</span>
+        <span class="chip">Pulled Pork 3 890 Ft</span>
+      </div>
+      <a class="btn btn--ghost magnet r-up" href="#etlap" data-jump="lepenyek">LEPÉNYEK MEGNÉZÉSE</a>
+    </div>
+
+    <img class="lepeny__float" src="assets/img/lepeny-float.webp" width="814" height="534" loading="lazy"
+         alt="" aria-hidden="true" data-parallax="-0.06">
+  </div>
+</section>
+
+<!-- ===== ÉTLAP ===== -->
+<section class="sec sec--menu" id="etlap">
+  <div class="wrap">
+    <header class="sechead sechead--row">
+      <div>
+        <p class="sechead__label"><span class="num">04</span> ÉTLAP</p>
+        <h2 class="sechead__title r-clip"><span>A TÉRKÉPES ÉTLAP</span></h2>
+      </div>
+      <p class="sechead__sub r-up">Válassz kategóriát, lapozz a kínálatban, és rakd a kosárba — a rendelés a valóságban telefonon, Woltal vagy foodorával megy.</p>
+    </header>
+
+    <div class="tabs" role="tablist" aria-label="Étlap kategóriák">
+      <button class="tab is-active" role="tab" aria-selected="true" data-tab="burgerek">BURGEREK</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="lepenyek">LEPÉNYEK</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="grilltalek">GRILLTÁLAK</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="doggyk">DOGGYK</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="desszertek">DESSZERTEK</button>
+    </div>
+
+    <div class="grid" id="menuGrid">
+
+      <!-- BURGEREK -->
+      <article class="prod r-up" data-cat="burgerek" data-name="Klasszikus burger" data-price="3290"
+        data-img="assets/img/p-klasszikus.webp" data-alt="GrillBox klasszikus burger"
+        data-desc="15 dkg-os marhahús, 12 dkg-os vajas buci, saláta, paradicsom, uborka, lila hagyma, házi ízesítésű hamburger szósz.">
+        <button class="prod__open" aria-label="Klasszikus burger részletei">
+          <span class="prod__media"><img src="assets/img/p-klasszikus.webp" width="760" height="707" loading="lazy" alt="GrillBox klasszikus burger"></span>
+          <span class="prod__body">
+            <span class="prod__name">Klasszikus burger</span>
+            <span class="prod__desc">15 dkg marha · vajas buci · házi szósz</span>
+            <span class="prod__foot"><span class="price">3 290 Ft</span><span class="prod__more">RÉSZLETEK</span></span>
+          </span>
+        </button>
+        <button class="add" data-add aria-label="Klasszikus burger kosárba">
+          <svg><use href="#i-plus"></use></svg>
+        </button>
+      </article>
+
+      <article class="prod r-up" data-cat="burgerek" data-name="Sajt király" data-price="3890"
+        data-img="assets/img/p-sajtkiraly.webp" data-alt="GrillBox sajtkirály burger"
+        data-desc="15 dkg-os marhahús, 12 dkg-os vajas buci, sajt, cheddar sajt, saláta, paradicsom, uborka, hagyma, házi hamburgerszósz.">
+        <button class="prod__open" aria-label="Sajt király részletei">
+          <span class="prod__media"><img src="assets/img/p-sajtkiraly.webp" width="760" height="715" loading="lazy" alt="GrillBox sajtkirály burger"></span>
+          <span class="prod__body">
+            <span class="prod__name">Sajt király</span>
+            <span class="prod__desc">15 dkg marha · sajt + cheddar · házi szósz</span>
+            <span class="prod__foot"><span class="price">3 890 Ft</span><span class="prod__more">RÉSZLETEK</span></span>
+          </span>
+        </button>
+        <button class="add" data-add aria-label="Sajt király kosárba"><svg><use href="#i-plus"></use></svg></button>
+      </article>
+
+      <article class="prod prod--hot r-up" data-cat="burgerek" data-name="Full extra burger" data-price="3990"
+        data-img="assets/img/p-fullextra.webp" data-alt="GrillBox full extra burger"
+        data-desc="15 dkg-os marhahús, 12 dkg-os vajas buci, bacon, sajt, cheddar, saláta, paradicsom, uborka, hagyma, pirított hagyma, házi hamburgerszósz.">
+        <span class="prod__flag">LEGITTABB</span>
+        <button class="prod__open" aria-label="Full extra burger részletei">
+          <span class="prod__media"><img src="assets/img/p-fullextra.webp" width="760" height="683" loading="lazy" alt="GrillBox full extra burger"></span>
+          <span class="prod__body">
+            <span class="prod__name">Full extra burger</span>
+            <span class="prod__desc">15 dkg marha · bacon · cheddar · pirított hagyma</span>
+            <span class="prod__foot"><span class="price">3 990 Ft</span><span class="prod__more">RÉSZLETEK</span></span>
+          </span>
+        </button>
+        <button class="add" data-add aria-label="Full extra burger kosárba"><svg><use href="#i-plus"></use></svg></button>
+      </article>
+
+      <article class="prod r-up" data-cat="burgerek" data-name="Texas burger" data-price="3990"
+        data-img="assets/img/p-texas.webp" data-alt="GrillBox texas burger"
+        data-desc="15 dkg-os marhahús, 12 dkg-os vajas buci, cheddar, saláta, paradicsom, uborka, jalapeno, hagyma, pirított hagyma, BBQ szósz, házi hamburgerszósz.">
+        <button class="prod__open" aria-label="Texas burger részletei">
+          <span class="prod__media"><img src="assets/img/p-texas.webp" width="760" height="436" loading="lazy" alt="GrillBox texas burger"></span>
+          <span class="prod__body">
+            <span class="prod__name">Texas burger</span>
+            <span class="prod__desc">15 dkg marha · jalapeno · BBQ szósz</span>
+            <span class="prod__foot"><span class="price">3 990 Ft</span><span class="prod__more">RÉSZLETEK</span></span>
+          </span>
+        </button>
+        <button class="add" data-add aria-label="Texas burger kosárba"><svg><use href="#i-plus"></use></svg></button>
+      </article>
+
+      <article class="prod r-up" data-cat="burgerek" data-name="Dupla Sajtkirály" data-price="4690"
+        data-img="assets/img/p-duplasajtkiraly.webp" data-alt="GrillBox dupla sajtkirály burger"
+        data-desc="2 db 15 dkg-os marhahús pogácsa, 12 dkg-os vajas buci, mindkét húspogácsán trappista- és cheddar sajt, saláta, paradicsom, uborka, hagyma, házi hamburgerszósz.">
+        <button class="prod__open" aria-label="Dupla Sajtkirály részletei">
+          <span class="prod__media"><img src="assets/img/p-duplasajtkiraly.webp" width="760" height="492" loading="lazy" alt="GrillBox dupla sajtkirály burger"></span>
+          <span class="prod__body">
+            <span class="prod__name">Dupla Sajtkirály</span>
+            <span class="prod__desc">2 × 15 dkg marha · dupla sajt</span>
+            <span class="prod__foot"><span class="price">4 690 Ft</span><span class="prod__more">RÉSZLETEK</span></span>
+          </span>
+        </button>
+        <button class="add" data-add aria-label="Dupla Sajtkirály kosárba"><svg><use href="#i-plus"></use></svg></button>
+      </article>
+
+      <article class="prod r-up" data-cat="burgerek" data-name="Pulled Pork BBQ Burger" data-price="4990"
+        data-img="assets/img/p-pulledbbq.webp" data-alt="GrillBox pulled pork BBQ burger"
+        data-desc="150 grammos pulled pork sertéshús (BBQ), kovi ubi, coleslaw saláta, friss saláta, bacon, házi fűszerezésű hambiszósz.">
+        <button class="prod__open" aria-label="Pulled Pork BBQ Burger részletei">
+          <span class="prod__media"><img src="assets/img/p-pulledbbq.webp" width="760" height="428" loading="lazy" alt="GrillBox pulled pork BBQ burger"></span>
+          <span class="prod__body">
+            <span class="prod__name">Pulled Pork BBQ Burger</span>
+            <span class="prod__desc">150 g pulled pork · coleslaw · bacon</span>
+            <span class="prod__foot"><span class="price">4 990 Ft</span><span class="prod__more">RÉSZLETEK</span></span>
+          </span>
+        </button>
+        <button class="add" data-add aria-label="Pulled Pork BBQ Burger kosárba"><svg><use href="#i-plus"></use></svg></button>
+      </article>
+
+      <article class="prod r-up" data-cat="burgerek" data-name="Lazacos burger" data-price="3290"
+        data-img="assets/img/p-lazacosburger.webp" data-alt="GrillBox lazacos burger"
+        data-desc="10 dkg lazac, jégsaláta, házi készítésű saláta mix, 12 dkg vajas buci.">
+        <button class="prod__open" aria-label="Lazacos burger részletei">
+          <span class="prod__media"><img src="assets/img/p-lazacosburger.webp" width="760" height="583" loading="lazy" alt="GrillBox lazacos burger"></span>
+          <span class="prod__body">
+            <span class="prod__name">Lazacos burger</span>
+            <span class="prod__desc">10 dkg lazac · saláta mix · vajas buci</span>
+            <span class="prod__foot"><span class="price">3 290 Ft</span><span class="prod__more">RÉSZLETEK</span></span>
+          </span>
+        </button>
+        <button class="add" data-add aria-label="Lazacos burger kosárba"><svg><use href="#i-plus"></use></svg></button>
+      </article>
+
+      <!-- LEPÉNYEK -->
+      <article class="prod r-up" data-cat="lepenyek" data-name="Sajtos-Csirkés lepény" data-price="2990"
+        data-img="assets/img/p-lepenycsirkes.webp" data-alt="GrillBox sajtos csirkés lepény"
+        data-desc="Lepény, házi fűszerezésű tejfölös szósz, sajt, csirkemell filé." hidden>
+        <button class="prod__open" aria-label="Sajtos-Csirkés lepény részletei">
+          <span class="prod__media"><img src="assets/img/p-lepenycsirkes.webp" width="760" height="499" loading="lazy" alt="GrillBox sajtos csirkés lepény"></span>
+          <span class="prod__body">
+            <span class="prod__name">Sajtos-Csirkés lepény</span>
+            <span class="prod__desc">csirkemell · sajt · házi tejfölös szósz</span>
+            <span class="prod__foot"><span class="price">2 990 Ft</span><span class="prod__more">RÉSZLETEK</span></span>
+          </span>
+        </button>
+        <button class="add" data-add aria-label="Sajtos-Csirkés lepény kosárba"><svg><use href="#i-plus"></use></svg></button>
+      </article>
+
+      <article class="prod r-up" data-cat="lepenyek" data-name="Sajtos-Marhahúsos lepény" data-price="3490"
+        data-img="assets/img/p-lepenymarha.webp" data-alt="GrillBox sajtos marhahúsos lepény"
+        data-desc="Lepény, házi fűszerezésű tejfölös szósz, sajt, marhahús." hidden>
+        <button class="prod__open" aria-label="Sajtos-Marhahúsos lepény részletei">
+          <span class="prod__media"><img src="assets/img/p-lepenymarha.webp" width="760" height="499" loading="lazy" alt="GrillBox sajtos marhahúsos lepény"></span>
+          <span class="prod__body">
+            <span class="prod__name">Sajtos-Marhahúsos lepény</span>
+            <span class="prod__desc">marhahús · sajt · házi tejfölös szósz</span>
+            <span class="prod__foot"><span class="price">3 490 Ft</span><span class="prod__more">RÉSZLETEK</span></span>
+          </span>
+        </button>
+        <button class="add" data-add aria-label="Sajtos-Marhahúsos lepény kosárba"><svg><use href="#i-plus"></use></svg></button>
+      </article>
+
+      <article class="prod r-up" data-cat="lepenyek" data-name="Székely Extra Lepény" data-price="3490"
+        data-img="assets/img/p-lepenyszekely.webp" data-alt="GrillBox székely extra lepény"
+        data-desc="Lepény, házi fűszerezésű tejfölös szósz, csirkemell filé, sajt, sült bacon, lilahagyma, pirított hagyma." hidden>
+        <button class="prod__open" aria-label="Székely Extra Lepény részletei">
+          <span class="prod__media"><img src="assets/img/p-lepenyszekely.webp" width="760" height="499" loading="lazy" alt="GrillBox székely extra lepény"></span>
+          <span class="prod__body">
+            <span class="prod__name">Székely Extra Lepény</span>
+            <span class="prod__desc">csirkemell · bacon · pirított hagyma</span>
+            <span class="prod__foot"><span class="price">3 490 Ft</span><span class="prod__more">RÉSZLETEK</span></span>
+          </span>
+        </button>
+        <button class="add" data-add aria-label="Székely Extra Lepény kosárba"><svg><use href="#i-plus"></use></svg></button>
+      </article>
+
+      <article class="prod r-up" data-cat="lepenyek" data-name="Texas Extra Lepény" data-price="3890"
+        data-img="assets/img/p-lepenytexas.webp" data-alt="GrillBox texas extra lepény"
+        data-desc="Lepény, házi fűszerezésű tejfölös szósz, marhahús, sajt, cheddar sajt, saláta, jalapeno, pirított hagyma, BBQ szósz." hidden>
+        <button class="prod__open" aria-label="Texas Extra Lepény részletei">
+          <span class="prod__media"><img src="assets/img/p-lepenytexas.webp" width="760" height="446" loading="lazy" alt="GrillBox texas extra lepény"></span>
+          <span class="prod__body">
+            <span class="prod__name">Texas Extra Lepény</span>
+            <span class="prod__desc">marhahús · cheddar · jalapeno · BBQ</span>
+            <span class="prod__foot"><span class="price">3 890 Ft</span><span class="prod__more">RÉSZLETEK</span></span>
+          </span>
+        </button>
+        <button class="add" data-add aria-label="Texas Extra Lepény kosárba"><svg><use href="#i-plus"></use></svg></button>
+      </article>
+
+      <article class="prod r-up" data-cat="lepenyek" data-name="Pulled Pork lepény" data-price="3890"
+        data-img="assets/img/p-lepenypulled.webp" data-alt="GrillBox pulled pork lepény"
+        data-desc="Pulled pork, friss saláta, coleslaw saláta, BBQ szósz, házi lepény." hidden>
+        <button class="prod__open" aria-label="Pulled Pork lepény részletei">
+          <span class="prod__media"><img src="assets/img/p-lepenypulled.webp" width="760" height="444" loading="lazy" alt="GrillBox pulled pork lepény"></span>
+          <span class="prod__body">
+            <span class="prod__name">Pulled Pork lepény</span>
+            <span class="prod__desc">pulled pork · coleslaw · BBQ szósz</span>
+            <span class="prod__foot"><span class="price">3 890 Ft</span><span class="prod__more">RÉSZLETEK</span></span>
+          </span>
+        </button>
+        <button class="add" data-add aria-label="Pulled Pork lepény kosárba"><svg><use href="#i-plus"></use></svg></button>
+      </article>
+
+      <article class="prod r-up" data-cat="lepenyek" data-name="Lazacos lepény" data-price="3590"
+        data-img="assets/img/p-lepenylazacos.webp" data-alt="GrillBox lazacos lepény"
+        data-desc="Lepény, tejfölös háziszósz, sajt, lazac, házi készítésű salátamix." hidden>
+        <button class="prod__open" aria-label="Lazacos lepény részletei">
+          <span class="prod__media"><img src="assets/img/p-lepenylazacos.webp" width="760" height="499" loading="lazy" alt="GrillBox lazacos lepény"></span>
+          <span class="prod__body">
+            <span class="prod__name">Lazacos lepény</span>
+            <span class="prod__desc">lazac · salátamix · házi tejfölös szósz</span>
+            <span class="prod__foot"><span class="price">3 590 Ft</span><span class="prod__more">RÉSZLETEK</span></span>
+          </span>
+        </button>
+        <button class="add" data-add aria-label="Lazacos lepény kosárba"><svg><use href="#i-plus"></use></svg></button>
+      </article>
+
+      <!-- GRILLTÁLAK -->
+      <article class="prod r-up" data-cat="grilltalek" data-name="Sajtos tál" data-price="2590"
+        data-img="assets/img/p-talsajtos.webp" data-alt="GrillBox sajtos tál"
+        data-desc="Fűszeres hasábburgonya, reszelt sajt, cheddar sajt." hidden>
+        <button class="prod__open" aria-label="Sajtos tál részletei">
+          <span class="prod__media"><img src="assets/img/p-talsajtos.webp" width="760" height="598" loading="lazy" alt="GrillBox sajtos tál"></span>
+          <span class="prod__body">
+            <span class="prod__name">Sajtos tál</span>
+            <span class="prod__desc">fűszeres hasáb · reszelt sajt · cheddar</span>
+            <span class="prod__foot"><span class="price">2 590 Ft</span><span class="prod__more">RÉSZLETEK</span></span>
+          </span>
+        </button>
+        <button class="add" data-add aria-label="Sajtos tál kosárba"><svg><use href="#i-plus"></use></svg></button>
+      </article>
+
+      <article class="prod r-up" data-cat="grilltalek" data-name="Csirkés tál" data-price="3790"
+        data-img="assets/img/p-talcsirkes.webp" data-alt="GrillBox csirkés tál"
+        data-desc="Csirke, fűszeres hasáb, reszelt sajt, cheddar sajt." hidden>
+        <button class="prod__open" aria-label="Csirkés tál részletei">
+          <span class="prod__media"><img src="assets/img/p-talcsirkes.webp" width="760" height="630" loading="lazy" alt="GrillBox csirkés tál"></span>
+          <span class="prod__body">
+            <span class="prod__name">Csirkés tál</span>
+            <span class="prod__desc">csirke · fűszeres hasáb · cheddar</span>
+            <span class="prod__foot"><span class="price">3 790 Ft</span><span class="prod__more">RÉSZLETEK</span></span>
+          </span>
+        </button>
+        <button class="add" data-add aria-label="Csirkés tál kosárba"><svg><use href="#i-plus"></use></svg></button>
+      </article>
+
+      <article class="prod r-up" data-cat="grilltalek" data-name="Texasz extra tál" data-price="4190"
+        data-img="assets/img/p-taltexasz.webp" data-alt="GrillBox texas extra grilltál"
+        data-desc="Marhahús, fűszeres hasábburgonya, reszelt sajt, cheddar sajt, pirított hagyma, jalapeno, BBQ szósz." hidden>
+        <button class="prod__open" aria-label="Texasz extra tál részletei">
+          <span class="prod__media"><img src="assets/img/p-taltexasz.webp" width="607" height="703" loading="lazy" alt="GrillBox texas extra grilltál"></span>
+          <span class="prod__body">
+            <span class="prod__name">Texasz extra tál</span>
+            <span class="prod__desc">marhahús · jalapeno · BBQ szósz</span>
+            <span class="prod__foot"><span class="price">4 190 Ft</span><span class="prod__more">RÉSZLETEK</span></span>
+          </span>
+        </button>
+        <button class="add" data-add aria-label="Texasz extra tál kosárba"><svg><use href="#i-plus"></use></svg></button>
+      </article>
+
+      <article class="prod r-up" data-cat="grilltalek" data-name="Gyros tál" data-price="4650"
+        data-img="assets/img/p-gyros.webp" data-alt="GrillBox gyros tál"
+        data-desc="Fűszeres hasáb, csirkecomb filé, jégsaláta, paradicsom, uborka, lilahagyma, tzatziki szósz." hidden>
+        <button class="prod__open" aria-label="Gyros tál részletei">
+          <span class="prod__media"><img src="assets/img/p-gyros.webp" width="760" height="428" loading="lazy" alt="GrillBox gyros tál"></span>
+          <span class="prod__body">
+            <span class="prod__name">Gyros tál</span>
+            <span class="prod__desc">csirkecomb filé · friss saláta · tzatziki</span>
+            <span class="prod__foot"><span class="price">4 650 Ft</span><span class="prod__more">RÉSZLETEK</span></span>
+          </span>
+        </button>
+        <button class="add" data-add aria-label="Gyros tál kosárba"><svg><use href="#i-plus"></use></svg></button>
+      </article>
+
+      <article class="prod r-up" data-cat="grilltalek" data-name="Crispy Strips Box" data-price="4490"
+        data-img="assets/img/p-box.webp" data-alt="GrillBox crispy strips box"
+        data-desc="200 g panírozott csirkemell csík, 200 g fűszeres hasábburgonya, házi coleslaw és füstös BBQ szósz." hidden>
+        <button class="prod__open" aria-label="Crispy Strips Box részletei">
+          <span class="prod__media"><img src="assets/img/p-box.webp" width="760" height="602" loading="lazy" alt="GrillBox crispy strips box"></span>
+          <span class="prod__body">
+            <span class="prod__name">Crispy Strips Box</span>
+            <span class="prod__desc">ropogós csirkecsík · coleslaw · BBQ</span>
+            <span class="prod__foot"><span class="price">4 490 Ft</span><span class="prod__more">RÉSZLETEK</span></span>
+          </span>
+        </button>
+        <button class="add" data-add aria-label="Crispy Strips Box kosárba"><svg><use href="#i-plus"></use></svg></button>
+      </article>
+
+      <!-- DOGGYK -->
+      <article class="prod r-up" data-cat="doggyk" data-name="Dogger" data-price="2890"
+        data-img="assets/img/p-dogger.webp" data-alt="GrillBox dogger"
+        data-desc="Bagett, házi fűszerezésű kolbász, házilag fűszerezett hamburgerszósz." hidden>
+        <button class="prod__open" aria-label="Dogger részletei">
+          <span class="prod__media"><img src="assets/img/p-dogger.webp" width="760" height="526" loading="lazy" alt="GrillBox dogger"></span>
+          <span class="prod__body">
+            <span class="prod__name">Dogger</span>
+            <span class="prod__desc">bagett · házi kolbász · házi szósz</span>
+            <span class="prod__foot"><span class="price">2 890 Ft</span><span class="prod__more">RÉSZLETEK</span></span>
+          </span>
+        </button>
+        <button class="add" data-add aria-label="Dogger kosárba"><svg><use href="#i-plus"></use></svg></button>
+      </article>
+
+      <article class="prod r-up" data-cat="doggyk" data-name="Dogger Fullos" data-price="3390"
+        data-img="assets/img/p-doggerfullos.webp" data-alt="GrillBox dogger fullos"
+        data-desc="Bagett, házi fűszerezésű kolbász, hamburgerszósz, saláta, pirított hagyma, uborka." hidden>
+        <button class="prod__open" aria-label="Dogger Fullos részletei">
+          <span class="prod__media"><img src="assets/img/p-doggerfullos.webp" width="760" height="335" loading="lazy" alt="GrillBox dogger fullos"></span>
+          <span class="prod__body">
+            <span class="prod__name">Dogger Fullos</span>
+            <span class="prod__desc">saláta · uborka · pirított hagyma</span>
+            <span class="prod__foot"><span class="price">3 390 Ft</span><span class="prod__more">RÉSZLETEK</span></span>
+          </span>
+        </button>
+        <button class="add" data-add aria-label="Dogger Fullos kosárba"><svg><use href="#i-plus"></use></svg></button>
+      </article>
+
+      <article class="prod r-up" data-cat="doggyk" data-name="Dogger Extra Fullos" data-price="3590"
+        data-img="assets/img/p-doggerextra.webp" data-alt="GrillBox dogger extra fullos"
+        data-desc="Bagett, házi fűszerezésű kolbász, hamburgerszósz, saláta, pirított hagyma, uborka, jalapeno." hidden>
+        <button class="prod__open" aria-label="Dogger Extra Fullos részletei">
+          <span class="prod__media"><img src="assets/img/p-doggerextra.webp" width="760" height="335" loading="lazy" alt="GrillBox dogger extra fullos"></span>
+          <span class="prod__body">
+            <span class="prod__name">Dogger Extra Fullos</span>
+            <span class="prod__desc">+ jalapeno · extra fűszerezés</span>
+            <span class="prod__foot"><span class="price">3 590 Ft</span><span class="prod__more">RÉSZLETEK</span></span>
+          </span>
+        </button>
+        <button class="add" data-add aria-label="Dogger Extra Fullos kosárba"><svg><use href="#i-plus"></use></svg></button>
+      </article>
+
+      <!-- DESSZERTEK -->
+      <article class="prod r-up" data-cat="desszertek" data-name="NutellaVarázs (3 db)" data-price="2190"
+        data-img="assets/img/p-nutella.webp" data-alt="GrillBox Nutella palacsinta"
+        data-desc="Házi palacsinta tészta, Nutellával töltve, porcukorral megszórva." hidden>
+        <button class="prod__open" aria-label="NutellaVarázs részletei">
+          <span class="prod__media"><img src="assets/img/p-nutella.webp" width="760" height="428" loading="lazy" alt="GrillBox Nutella palacsinta"></span>
+          <span class="prod__body">
+            <span class="prod__name">NutellaVarázs (3 db)</span>
+            <span class="prod__desc">házi tészta · Nutella · porcukor</span>
+            <span class="prod__foot"><span class="price">2 190 Ft</span><span class="prod__more">RÉSZLETEK</span></span>
+          </span>
+        </button>
+        <button class="add" data-add aria-label="NutellaVarázs kosárba"><svg><use href="#i-plus"></use></svg></button>
+      </article>
+
+      <article class="prod r-up" data-cat="desszertek" data-name="TúróMámor (3 db)" data-price="2190"
+        data-img="assets/img/p-turamamor.webp" data-alt="GrillBox túrós palacsinta"
+        data-desc="Puha házi tészta, krémes túróval töltve, porcukorral hintve." hidden>
+        <button class="prod__open" aria-label="TúróMámor részletei">
+          <span class="prod__media"><img src="assets/img/p-turamamor.webp" width="760" height="608" loading="lazy" alt="GrillBox túrós palacsinta"></span>
+          <span class="prod__body">
+            <span class="prod__name">TúróMámor (3 db)</span>
+            <span class="prod__desc">házi tészta · krémes túró · porcukor</span>
+            <span class="prod__foot"><span class="price">2 190 Ft</span><span class="prod__more">RÉSZLETEK</span></span>
+          </span>
+        </button>
+        <button class="add" data-add aria-label="TúróMámor kosárba"><svg><use href="#i-plus"></use></svg></button>
+      </article>
+
+      <article class="prod r-up" data-cat="desszertek" data-name="Túrórudis (3 db)" data-price="2390"
+        data-img="assets/img/p-turorudis.webp" data-alt="GrillBox túrórudis palacsinta"
+        data-desc="Puha házi tészta, töltve túróval és Nutellával, porcukorral a tetején." hidden>
+        <button class="prod__open" aria-label="Túrórudis részletei">
+          <span class="prod__media"><img src="assets/img/p-turorudis.webp" width="412" height="330" loading="lazy" alt="GrillBox túrórudis palacsinta"></span>
+          <span class="prod__body">
+            <span class="prod__name">Túrórudis (3 db)</span>
+            <span class="prod__desc">túró + Nutella töltelék</span>
+            <span class="prod__foot"><span class="price">2 390 Ft</span><span class="prod__more">RÉSZLETEK</span></span>
+          </span>
+        </button>
+        <button class="add" data-add aria-label="Túrórudis kosárba"><svg><use href="#i-plus"></use></svg></button>
+      </article>
+
+      <article class="prod r-up" data-cat="desszertek" data-name="FahéjasÍz (3 db)" data-price="1790"
+        data-img="assets/img/p-fahijas.webp" data-alt="GrillBox fahéjas palacsinta"
+        data-desc="Vékony, fahéjas palacsinta, házias fahéjas cukorral töltve." hidden>
+        <button class="prod__open" aria-label="FahéjasÍz részletei">
+          <span class="prod__media"><img src="assets/img/p-fahijas.webp" width="760" height="1013" loading="lazy" alt="GrillBox fahéjas palacsinta"></span>
+          <span class="prod__body">
+            <span class="prod__name">FahéjasÍz (3 db)</span>
+            <span class="prod__desc">vékony palacsinta · fahéjas cukor</span>
+            <span class="prod__foot"><span class="price">1 790 Ft</span><span class="prod__more">RÉSZLETEK</span></span>
+          </span>
+        </button>
+        <button class="add" data-add aria-label="FahéjasÍz kosárba"><svg><use href="#i-plus"></use></svg></button>
+      </article>
+    </div>
+
+    <p class="menu-note r-up">
+      <svg><use href="#i-bolt"></use></svg>
+      Az árak a Wolt nyilvános GrillBox étlapjáról származnak (2026). A helyszíni árak és a kínálat eltérhetnek — a végleges árakat a rendelés visszaigazolása tartalmazza. Ez egy látványterv, a kosár demó.
+    </p>
+  </div>
+</section>
+
+<!-- ===== RENDELÉS ===== -->
+<section class="sec sec--order" id="rendeles">
+  <div class="wrap">
+    <header class="sechead">
+      <p class="sechead__label"><span class="num">05</span> RENDELÉS</p>
+      <h2 class="sechead__title r-clip"><span>RENDELD ÚGY, AHOGY NEKED KÉNYELMES.</span></h2>
+    </header>
+
+    <div class="ways">
+      <article class="way r-up">
+        <span class="way__idx">01</span>
+        <h3>HELYBEN / ELVITELRE</h3>
+        <p>Várkörút körforgalom — gyors személyes rendelés, azonnal a grillsütőről.</p>
+        <a class="way__link" href="tel:+36204284164">+36 20 428 4164 <svg><use href="#i-arrow"></use></svg></a>
+      </article>
+
+      <article class="way way--hot r-up">
+        <span class="way__idx">02</span>
+        <h3>WOLT</h3>
+        <p>Házhozszállítás a Woltalkeresztül — a teljes GrillBox menü elérhető.</p>
+        <a class="way__link" href="https://wolt.com/hu/hun/szekesfehervar/restaurant/varkoruti-grill-box" target="_blank" rel="noopener">MEGNÉZEM A WOLTON <svg><use href="#i-arrow"></use></svg></a>
+      </article>
+
+      <article class="way r-up">
+        <span class="way__idx">03</span>
+        <h3>FOODORA</h3>
+        <p>Rendelj a foodorán — ugyanaz a kínálat, kiszállítással Székesfehérváron.</p>
+        <a class="way__link" href="https://www.foodora.hu/restaurant/c1un/varkoruti-grill-box" target="_blank" rel="noopener">MEGNÉZEM A FOODORÁN <svg><use href="#i-arrow"></use></svg></a>
+      </article>
+    </div>
+
+    <a class="phonecard r-up" href="tel:+36204284164">
+      <span class="phonecard__ico"><svg><use href="#i-phone"></use></svg></span>
+      <span class="phonecard__txt"><small>TELEFONOS RENDELÉS</small><strong>+36 20 428 4164</strong></span>
+      <span class="phonecard__go">HÍVÁS <svg><use href="#i-arrow"></use></svg></span>
+    </a>
+  </div>
+</section>
+
+<!-- ===== ÉRTÉKELÉS ===== -->
+<section class="sec sec--rate" id="ertekeles">
+  <div class="wrap rate__in">
+    <div class="rate__big r-up">
+      <span class="rate__num"><span data-count="4.6" data-dec="1">0,0</span></span>
+      <span class="rate__stars">
+        <svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg class="half"><use href="#i-star"></use></svg>
+      </span>
+      <span class="rate__cap">VENDÉGEINK ÉRTÉKELÉSE · GOOGLE</span>
+    </div>
+    <div class="rate__facts">
+      <div class="fact r-up"><strong><span data-count="380" data-suffix="+">0</span></strong><span>Google értékelés</span></div>
+      <div class="fact r-up"><strong><span data-count="4.9" data-dec="1">0,0</span></strong><span>Facebook értékelés</span></div>
+      <div class="fact r-up"><strong>Székesfehérvár</strong><span>Várkörút körforgalom</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== KAPCSOLAT ===== -->
+<section class="sec sec--contact" id="kapcsolat">
+  <div class="wrap contact__in">
+    <div class="contact__info">
+      <p class="sechead__label"><span class="num">06</span> HOZZÁNK JÖSSZ</p>
+      <h2 class="sechead__title r-clip"><span>ITT TALÁLSZ MINKET</span></h2>
+
+      <address class="addr r-up">
+        <strong>GrillBox Várkörút</strong>
+        <span>8000 Székesfehérvár</span>
+        <span>Várkörút körforgalom</span>
+      </address>
+
+      <div class="hours r-up" data-hours>
+        <div class="hours__head"><svg><use href="#i-clock"></use></svg><span>NYITVATARTÁS</span><b data-open-now>—</b></div>
+        <ul>
+          <li data-days="1,2,3,4"><span>Hétfő – Csütörtök</span><b>10:30 – 21:00</b></li>
+          <li data-days="5,6"><span>Péntek – Szombat</span><b>10:30 – 22:00</b></li>
+          <li data-days="0"><span>Vasárnap</span><b>Zárva</b></li>
+        </ul>
+        <p class="hours__note">Forrás: Google / nyilvános adatok. Az eltérő források miatt érdemes a Facebookon ellenőrizni.</p>
+      </div>
+
+      <div class="contact__cta r-up">
+        <a class="btn btn--primary magnet" href="https://www.google.com/maps/dir/?api=1&amp;destination=GrillBox+V%C3%A1rk%C3%B6r%C3%BAt+Sz%C3%A9kesfeh%C3%A9rv%C3%A1r" target="_blank" rel="noopener">ÚTVONALTERVEZÉS</a>
+        <a class="btn btn--ghost magnet" href="tel:+36204284164">HÍVÁS</a>
+      </div>
+
+      <div class="contact__links r-up">
+        <a href="https://www.facebook.com/Grillboxszekesfehervar" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://wolt.com/hu/hun/szekesfehervar/restaurant/varkoruti-grill-box" target="_blank" rel="noopener">Wolt</a>
+        <a href="https://www.foodora.hu/restaurant/c1un/varkoruti-grill-box" target="_blank" rel="noopener">foodora</a>
+      </div>
+    </div>
+
+    <div class="map r-mask" aria-label="Térkép: GrillBox Várkörút, Székesfehérvár">
+      <svg class="map__svg" viewBox="0 0 600 520" role="img" aria-label="Elhelyezkedés a Várkörút körforgalomnál">
+        <defs>
+          <linearGradient id="mgrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#151515"/><stop offset="1" stop-color="#0d0d0d"/>
+          </linearGradient>
+        </defs>
+        <rect width="600" height="520" fill="url(#mgrad)"/>
+        <g stroke="#232323" stroke-width="1">
+          <path d="M0 90h600M0 190h600M0 300h600M0 410h600M110 0v520M240 0v520M370 0v520M490 0v520"/>
+        </g>
+        <g fill="none" stroke="#2c2c2c" stroke-width="26" stroke-linecap="round">
+          <path d="M-20 250 C 120 250 160 150 300 150 S 480 250 620 250"/>
+          <path d="M300 -20 V 150 M300 330 V 540"/>
+        </g>
+        <circle cx="300" cy="250" r="86" fill="none" stroke="#3a3a3a" stroke-width="30"/>
+        <circle cx="300" cy="250" r="56" fill="#101010" stroke="#242424" stroke-width="2"/>
+        <text x="300" y="256" text-anchor="middle" fill="#4a4a4a" font-family="Inter, sans-serif" font-size="15" letter-spacing="3">VÁRKÖRÚT</text>
+        <g class="map__pin">
+          <circle cx="300" cy="164" r="34" fill="rgba(255,107,26,.16)"/>
+          <path d="M300 138c-11 0-20 9-20 20 0 15 20 32 20 32s20-17 20-32c0-11-9-20-20-20z" fill="#FF6B1A"/>
+          <circle cx="300" cy="158" r="7" fill="#0B0B0B"/>
+        </g>
+        <text x="352" y="150" fill="#F5F1EA" font-family="Anton, Impact, sans-serif" font-size="26" letter-spacing="1">GRILLBOX</text>
+        <text x="352" y="174" fill="#8d877f" font-family="Inter, sans-serif" font-size="14">Várkörút körforgalom</text>
+      </svg>
+      <div class="map__badge"><svg><use href="#i-pin"></use></svg> 8000 Székesfehérvár, Várkörút körforgalom</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="wrap footer__in">
+    <div class="footer__brand">
+      <a class="brand" href="#hero">
+        <svg class="brand__mark" aria-hidden="true"><use href="#i-logo"></use></svg>
+        <span class="brand__text"><strong>GRILLBOX</strong><small>VÁRKÖRÚT · SZÉKESFEHÉRVÁR</small></span>
+      </a>
+      <p>Street food a Várkörúton: kézműves hamburgerek, saját recept alapján készült lepények, grilltálak, doggyk és palacsinták.</p>
+    </div>
+
+    <nav class="footer__nav" aria-label="Lábléc navigáció">
+      <h4>OLDAL</h4>
+      <a href="#kinalat">Kínálat</a>
+      <a href="#etlap">Étlap</a>
+      <a href="#rendeles">Rendelés</a>
+      <a href="#kapcsolat">Kapcsolat</a>
+    </nav>
+
+    <nav class="footer__nav" aria-label="Rendelési csatornák">
+      <h4>RENDELÉS</h4>
+      <a href="tel:+36204284164">+36 20 428 4164</a>
+      <a href="https://wolt.com/hu/hun/szekesfehervar/restaurant/varkoruti-grill-box" target="_blank" rel="noopener">Wolt</a>
+      <a href="https://www.foodora.hu/restaurant/c1un/varkoruti-grill-box" target="_blank" rel="noopener">foodora</a>
+      <a href="https://www.facebook.com/Grillboxszekesfehervar" target="_blank" rel="noopener">Facebook</a>
+    </nav>
+
+    <div class="footer__cta">
+      <h4>ÉHES VAGY?</h4>
+      <a class="btn btn--primary btn--block magnet" href="#etlap">ÉTLAP MEGNÉZÉSE</a>
+      <a class="btn btn--ghost btn--block magnet" href="tel:+36204284164">HÍVÁS</a>
+    </div>
+  </div>
+  <div class="wrap footer__bottom">
+    <span>© 2026 GrillBox Várkörút · Székesfehérvár</span>
+    <span class="tag">LÁTVÁNYTERV · DEMÓ KOSÁR</span>
+  </div>
+</footer>
+
+<!-- ===== MOBILE STICKY BAR ===== -->
+<nav class="mobar" aria-label="Gyors navigáció">
+  <a href="#etlap" class="mobar__i"><svg><use href="#i-bag"></use></svg><span>Étlap</span></a>
+  <a href="#rendeles" class="mobar__i"><svg><use href="#i-phone"></use></svg><span>Rendelés</span></a>
+  <button class="mobar__i" data-cart-open><svg><use href="#i-cart"></use></svg><span>Kosár</span><em class="cart-badge" data-cart-count hidden>0</em></button>
+</nav>
+
+<!-- ===== PRODUCT MODAL ===== -->
+<div class="modal" id="modal" hidden>
+  <div class="modal__scrim" data-modal-close></div>
+  <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="mName">
+    <button class="modal__close" data-modal-close aria-label="Bezárás"><svg><use href="#i-close"></use></svg></button>
+    <div class="modal__media"><img id="mImg" alt="" width="760" height="600"></div>
+    <div class="modal__body">
+      <p class="modal__cat" id="mCat">GRILLBOX</p>
+      <h3 id="mName">Termék</h3>
+      <p class="modal__desc" id="mDesc"></p>
+      <div class="modal__price"><span id="mPrice">0 Ft</span></div>
+
+      <div class="optbox">
+        <div class="optbox__head">
+          <span>Kérsz extra feltétet?</span>
+          <em>DEMÓ</em>
+        </div>
+        <p>A választható extrák listája a valódi rendszer csatlakozása után jelenik meg — a felület és a logika már készen áll.</p>
+      </div>
+
+      <div class="modal__buy">
+        <div class="stepper" role="group" aria-label="Mennyiség">
+          <button data-mqty="-1" aria-label="Csökkentés"><svg><use href="#i-minus"></use></svg></button>
+          <span id="mQty">1</span>
+          <button data-mqty="1" aria-label="Növelés"><svg><use href="#i-plus"></use></svg></button>
+        </div>
+        <button class="btn btn--primary btn--grow magnet" id="mAdd">KOSÁRBA — <span id="mTotal">0 Ft</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CART ===== -->
+<div class="cart" id="cart" hidden>
+  <div class="cart__scrim" data-cart-close></div>
+  <aside class="cart__panel" role="dialog" aria-modal="true" aria-label="Kosár">
+    <header class="cart__head">
+      <div><h3>KOSÁR</h3><span class="cart__sub">demó rendelés</span></div>
+      <button class="iconbtn" data-cart-close aria-label="Kosár bezárása"><svg><use href="#i-close"></use></svg></button>
+    </header>
+
+    <div class="cart__list" id="cartList"></div>
+
+    <div class="cart__empty" id="cartEmpty">
+      <svg><use href="#i-cart"></use></svg>
+      <p>A kosarad üres.</p>
+      <button class="btn btn--ghost" data-cart-close>Vissza az étlaphoz</button>
+    </div>
+
+    <footer class="cart__foot" id="cartFoot" hidden>
+      <div class="cart__row"><span>Összeg</span><strong id="cartSum">0 Ft</strong></div>
+      <p class="cart__note">Szállítási díj és fizetés a valódi rendszerben jelenik meg.</p>
+      <a class="btn btn--primary btn--block magnet" href="#rendeles" id="toOrder">Tovább a rendeléshez</a>
+      <div class="cart__channels">
+        <a href="tel:+36204284164"><svg><use href="#i-phone"></use></svg> Telefon</a>
+        <a href="https://wolt.com/hu/hun/szekesfehervar/restaurant/varkoruti-grill-box" target="_blank" rel="noopener">Wolt</a>
+        <a href="https://www.foodora.hu/restaurant/c1un/varkoruti-grill-box" target="_blank" rel="noopener">foodora</a>
+      </div>
+    </footer>
+  </aside>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>
